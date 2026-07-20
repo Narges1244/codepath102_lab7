@@ -23,6 +23,7 @@ body {
 }
 
 .page-content h1 {
+  color: #ffffff;
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -152,7 +153,7 @@ form button:hover,
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px 4px var(--card-glow, rgba(255, 255, 255, 0.08));
 }
 
 .crewmate-card a {

@@ -5,6 +5,16 @@ import { supabase} from '../supabaseClient'
 function Gallery() {
     const [crewmates, setCrewmates] = useState([])
     const [loading, setLoading] = useState(true)
+    const COLOR_MAP = {
+        Red: '#ff4d4d',
+        Green: '#4dff88',
+        Blue: '#4d94ff',
+        Purple: '#b84dff',
+        Yellow: '#ffea4d',
+        Orange: '#ff9d4d',
+        Pink: '#ff4dc4',
+        Rainbow: 'linear-gradient(90deg, red, orange, yellow, green, blue, violet)',
+      }
 
     useEffect(() =>{
         fetchCrewmates()
@@ -33,7 +43,8 @@ function Gallery() {
             <h1>Your Crewmate Gallery!</h1>
             <div className="gallery-grid">
                 {crewmates.map((c) =>(
-                    <div key={c.id} className="crewmate-card">
+                    <div key={c.id} className="crewmate-card"
+                        style={{ '--card-glow': COLOR_MAP[c.color] || 'rgba(255,255,255,0.08)' }}>
                         <Link to={`/crewmate/${c.id}`}>
                             <p>Name of Crewmate: {c.name}</p>
                             <p>Speed of Crewmate: {c.speed}</p>
