@@ -1,0 +1,54 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { supabase} from '../supabaseClient'
+
+function Gallery() {
+    const [crewmates, setCrewmates] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() =>{
+        fetchCrewmates()
+    }, [])
+    async function fetchCrewmates(){
+
+        const {data, error } = await supabase
+            .from('crewmates')
+            .select('*')
+            .order('created_at', {ascending: false })
+        if (error) console.error(error)
+        else setCrewmates(data)
+        setLoading(false)
+    }
+    if (crewmates.length === 0){
+        return(
+            <div>
+                <h1>Your Crewmate Gallery!</h1>
+                <p>You haven't made a crewmate yet!</p>
+                <Link to="/create">Create one here!</Link>
+            </div>
+        )
+    }
+    return(
+        <div>
+            <h1>Your Crewmate Gallery!</h1>
+            <div className="gallery-grid">
+                {crewmates.map((c) =>(
+                    <div key={c.id} className="crewmate-card">
+                        <Link to={`/crewmate/${c.id}`}>
+                            <p>Name of Crewmate: {c.name}</p>
+                            <p>Speed of Crewmate: {c.speed}</p>
+                            <p>Color of Crewmate:{c.color}</p>
+                        </Link>
+                        <Link to={`/crewmate/${c.id}/edit`}>
+                            <button>Edit Crewmate</button>
+                        </Link>
+
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+
+}
+
+export default Gallery

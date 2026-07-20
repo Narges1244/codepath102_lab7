@@ -1,0 +1,217 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f4f4f4;
+}
+
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 60px;
+}
+
+.page-content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.page-content h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.page-content p {
+  text-align: center;
+  color: #cfcfcf;
+}
+
+
+.navbar {
+  width: 180px;
+  background-color: #555555;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover {
+  color: #cfcfcf;
+}
+
+
+form {
+  max-width: 900px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  background-color: #4d4d4d;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 200px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+form input[type="text"]::placeholder,
+form input[type="number"]::placeholder {
+  color: #aaaaaa;
+}
+
+fieldset {
+  background-color: #4d4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 160px;
+}
+
+fieldset legend {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+fieldset label {
+  background: none;
+  padding: 4px 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+
+form button,
+.page-content > button {
+  display: block;
+  margin: 30px auto 0;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+form button:hover,
+.page-content > button:hover {
+  background-color: #555555;
+}
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.crewmate-card {
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.08);
+}
+
+.crewmate-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.crewmate-card p {
+  color: #ffffff;
+  text-align: left;
+  margin: 6px 0;
+}
+
+.crewmate-card p span,
+.crewmate-card p b {
+  background-color: #6b6b6b;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.crewmate-card button {
+  margin-top: 12px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.crewmate-card button:hover {
+  background-color: #1a1a1a;
+}
+
+
+.crewmate-detail {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.crewmate-detail .warning {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+
+.empty-state {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.empty-state button,
+.empty-state a button {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
